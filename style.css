@@ -1,0 +1,188 @@
+* {
+    box-sizing: border-box;
+}
+body{
+    padding: 0;
+    margin: 0;
+}
+.page-actions-cont{
+    height: 3rem;
+    background-color: darkcyan;
+    display: flex;
+    align-items: flex-end;
+}
+.page-action{
+    margin: 0.5rem;
+}
+.cellprops-actions-cont{
+    height: 2.5rem;
+    background-color: lightslategray;
+    display: flex;
+    align-items: center;
+    /* left/right/center, justify */
+    /* text-align: left; */
+}
+.cellprops-actions-cont > * {
+    display: inline-block;
+    margin-left: 0.5rem;
+    padding: 0.1rem;
+}
+.cellprops-actions-cont > *:hover {
+    cursor: pointer;
+}
+.font-family-prop, .font-size-prop {
+    padding: 0.2rem;
+}
+.formula-actions-cont{
+    height: 2.5rem;
+    background-color: lightslategrey;
+    /* background-color: lightcoral; */
+    display: flex;
+    align-items: center;
+    padding: 0.4rem;
+}
+.formula-actions-cont > * {
+    display: inline-block;
+    margin: 0.4rem;
+    height: 85%;
+    /* padding: 0.5rem; */
+}
+.address-bar {
+    width: 6%;
+    border-radius: 0.3rem;
+}
+.formula-bar {
+    width: 92%;
+    border-radius: 0.3rem;
+}
+.sheet-actions-cont{
+    height: 2.5rem;
+    background-color: lightslategray;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    /* padding: 0.5rem; */
+}
+.sheet-add-icon {
+    padding: 0.5rem;
+    width: 2vw;
+}
+.sheet-add-icon:hover{
+    cursor: pointer;
+}
+.sheets-folder-cont {
+    height: 75%;
+    width: calc(100vw - 2.5vw);
+    background-color: lightslategray;
+    display: inline-flex;
+    overflow: auto;
+}
+.sheets-folder {
+    text-decoration: underline;
+    font-weight: bolder;
+    font-size: small;
+    padding: 0.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sheet-content {
+    /* width: 4rem; */
+    padding: 0.3rem;
+    margin: 0.1rem;
+    text-align: center;
+    text-decoration: underline;
+    font-weight: bolder;
+    font-size: small;
+    background-color: whitesmoke;
+}
+.sheet-content:hover{
+    cursor: pointer;
+}
+.grid-cont{
+    height: calc(100vh - 3rem - 2.5rem - 2.5rem - 2.5rem);
+    background-color: transparent;
+    /* If parent is relative, then child will become absolute positioned w.r.t to the parent, not the whole outer div*/
+    position: relative;
+    /* to scroll for number of rows more than page height */
+    overflow: scroll;
+}
+.top-left-cell {
+    height: 1.5rem;
+    width: 2rem;
+    background-color: darkgrey;
+    position: fixed;
+    /* default value of z-index = 0, To have no effect of col or row cells on moving sheet left or right, 
+    can onl be applied where position is defined. whichever element has higher z-index will be solidly visual. 2 > 1 for each of row & col address cont */
+    z-index: 2;
+}
+.address-col-cont {
+    /* height: 150rem; */
+    width: 2rem;
+    background-color: lightslategray;
+    position: sticky;
+    top: 1.5rem;
+    left: 0;
+    z-index: 1;
+}
+.address_col {
+    height: 1.5rem;
+    width: 2rem;
+    text-align: center;
+    border: 0.1px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cells-cont {
+    position: absolute;
+    top: 0rem;
+    left: 2rem;
+    /* background-color: lightgreen; */
+    /* height: 3rem;
+    width: 3rem; */
+}
+.address-row-cont {
+    /* height: 2rem;
+    width: 2rem; */
+    background-color: lightslategrey;
+    /* To have col names horizontally */
+    display: flex;
+    position: sticky;
+    top: 0;
+    left: 2rem;
+    z-index: 1;
+}
+.address_row {
+    height: 1.5rem;
+    width: 4.5rem;
+    text-align: center;
+    border: 0.1px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.row-cont {
+    text-align: center;
+    /* border: none; */
+    display: flex;
+}
+.col-cell {
+    height: 1.5rem;
+    width: 4.5rem;
+    border: 0.1px solid;
+    /* outline: none; */
+}
+.color-prop {
+    position: relative;
+}
+.color-prop > input {
+    /* To hide the color boxes & show the text/color fill icons */
+    opacity: 0;
+    position: absolute;
+    /* To get color box anywhere on teh icon we click */
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
